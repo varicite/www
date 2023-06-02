@@ -1,0 +1,23 @@
+{
+  "name": "vericite-www",
+  "version": "1.0.0",
+  "description": "The main site of Vericite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/varicite/www.git"
+  },
+  "keywords": [
+    "crypto",
+    "fobs"
+  ],
+  "author": "Jose Collas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/varicite/www/issues"
+  },
+  "homepage": "https://github.com/varicite/www#readme"
+}
