@@ -57,29 +57,29 @@
     </article>
     <script>
         const getD = async (url) => {
+            const dlTemplate = document.createElement('dl');
             let r = '';
             const response = await fetch(url);
             const jsonData = await response.json();
             const { shape, image, properties, ...rest } = { ...jsonData, ...jsonData.properties };
             Object.entries(rest).forEach(([key, value]) => {
-                const label = [...key.replace(/_/g, ' ')]
-                label[0] = label[0].toUpperCase()
+                const label = [...key.replace(/_/g, ' ')];
+                label[0] = label[0].toUpperCase();
                 r += `<dt>${label.join('')}</dt><dd>${value}</dd>`;
-                // dlTemplate.innerHTML += `<dt>${label.join('')}</dt><dd>${value}</dd>`;
             });
-            return r;
+            dlTemplate.innerHTML = r;
+            return dlTemplate;
         }
-        const domTargetA = document.querySelector('#a')
-        const domTargetB = document.querySelector('#b')
-        const dlTemplate = document.createElement('dl')
-        domTargetA.appendChild(dlTemplate);
-
+        const domTargetA = document.querySelector('#a');
+        const domTargetB = document.querySelector('#b');
         const url = 'https://ipfs.io/ipfs/bafkreibokytgnctky5qvqkr6tqm2ulg4w6dx62ghjdgulyz5437k3idz6a?filename=fob-a.json';
         const urlB = 'https://ipfs.io/ipfs/bafkreicaccdqssva3gszr2ufkdcmpulzixrdt4n5percnd4spr7qfshzkm?filename=fob-b.json';
-            (async () => {
-                const htmlR = await getD(url)
-                dlTemplate.innerHTML = htmlR
-            })()
+        (async () => {
+            const htmlR = await getD(url)
+            domTargetA.appendChild(htmlR)
+            const htmlB = await getD(urlB);
+            domTargetB.appendChild(htmlB);
+        })()
     </script>
 </body>
 
