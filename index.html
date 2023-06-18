@@ -14,12 +14,21 @@
         article {
             display: flex;
             flex-direction: column;
-            width: 20em;
+            width: 60em;
             padding: 1em;
         }
 
         article img {
             margin-bottom: 1em;
+        }
+
+        dt {
+            font-size: 0.9em;
+            color: #111;
+        }
+
+        dd {
+            color: #666;
         }
     </style>
 </head>
@@ -40,13 +49,38 @@
     <article>
         <img src="https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg"
             width="300" />
-        Clear Acrylic Circular Disk ( 60mm wide, 6mm )
+        <article id="a"></article>
     </article>
-    <article>
-        <img src="https://ipfs.io/ipfs/bafybeibzj37obnksvsobrdpxcjlzzbgie7qcj3bb23jynnik6jc5rraaqm?filename=fob-spiral-black.jpg"
-            width="300" />
-        Black Acrylic Circular Disk ( 60mm wide, 6mm )
+    <img src="https://ipfs.io/ipfs/bafybeibzj37obnksvsobrdpxcjlzzbgie7qcj3bb23jynnik6jc5rraaqm?filename=fob-spiral-black.jpg"
+        width="300" />
+    <article id="b"></article>
     </article>
+    <script>
+        const getD = async (url) => {
+            let r = '';
+            const response = await fetch(url);
+            const jsonData = await response.json();
+            const { shape, image, properties, ...rest } = { ...jsonData, ...jsonData.properties };
+            Object.entries(rest).forEach(([key, value]) => {
+                const label = [...key.replace(/_/g, ' ')]
+                label[0] = label[0].toUpperCase()
+                r += `<dt>${label.join('')}</dt><dd>${value}</dd>`;
+                // dlTemplate.innerHTML += `<dt>${label.join('')}</dt><dd>${value}</dd>`;
+            });
+            return r;
+        }
+        const domTargetA = document.querySelector('#a')
+        const domTargetB = document.querySelector('#b')
+        const dlTemplate = document.createElement('dl')
+        domTargetA.appendChild(dlTemplate);
+
+        const url = 'https://ipfs.io/ipfs/bafkreibokytgnctky5qvqkr6tqm2ulg4w6dx62ghjdgulyz5437k3idz6a?filename=fob-a.json';
+        const urlB = 'https://ipfs.io/ipfs/bafkreicaccdqssva3gszr2ufkdcmpulzixrdt4n5percnd4spr7qfshzkm?filename=fob-b.json';
+            (async () => {
+                const htmlR = await getD(url)
+                dlTemplate.innerHTML = htmlR
+            })()
+    </script>
 </body>
 
 </html>
