@@ -9,30 +9,55 @@ header a {
     text-decoration: none;
     color: gray;
 }
+
 header span {
     font-size: 2em;
 }
+
 body {
     font-family: 'Courier New', Courier, monospace;
     margin: 1em;
 }
 
-article {
+.fobs-ab article {
     display: flex;
     flex-direction: column;
     width: 60em;
     padding: 1em;
 }
 
-article img {
+.fobs-ab article img {
     margin-bottom: 1em;
 }
 
+.index article.listing {
+    display: flex;
+    flex-direction: column;
+}
+
+.index article.listing .image {
+    width: 300px;
+    height: 300px;
+    background-color: gray;
+}
+.index .listing article {
+    display: flex;
+    justify-content: flex-start;
+align-items: self-end;
+    max-width: 500px;
+    max-height: 400px;
+    background-color: red;
+}
+
+dl {
+    margin-bottom: 2em;
+}
 dt {
-    font-size: 0.9em;
+    font-size: 0.7em;
     color: #111;
 }
 
 dd {
+    font-size: 0.8em;
     color: #666;
 }
