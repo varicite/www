@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 30em;
+}
+
+header a {
+    text-decoration: none;
+    color: gray;
+}
+header span {
+    font-size: 2em;
+}
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 1em;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    width: 60em;
+    padding: 1em;
+}
+
+article img {
+    margin-bottom: 1em;
+}
+
+dt {
+    font-size: 0.9em;
+    color: #111;
+}
+
+dd {
+    color: #666;
+}
