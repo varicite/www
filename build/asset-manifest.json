@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/varicite/www/static/css/main.1e805df3.css",
+    "main.js": "/varicite/www/static/js/main.0c3f615c.js",
+    "index.html": "/varicite/www/index.html",
+    "main.1e805df3.css.map": "/varicite/www/static/css/main.1e805df3.css.map",
+    "main.0c3f615c.js.map": "/varicite/www/static/js/main.0c3f615c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1e805df3.css",
+    "static/js/main.0c3f615c.js"
+  ]
+}
