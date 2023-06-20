@@ -1,17 +1,19 @@
-# Vericite
-This is the repository for the main website of vericite, hosted at vericite-cleveland-lima.com
+# Varicite
+This is the repository for the main website of varicite, hosted at 
+[http://varicite-cleveland-lima.com](http://varicite-cleveland-lima.com)
 
-## About Vericite
+
+## About Varicite
 
 Vericite is a producer of fobs. A Fob is an object that can take the form of a small electrical device, a piece of jewelry, or a counterweight to watches. As jewelry, the qualities of the fob itself are enjoyed like a piece of art. Vericite makes fobs that are like jewelry or art. They have no real function other than to be enjoyed for their intrinsic qualities. Vericite fobs are also Non-Fungible Tokens. The quality of the NFT ensures the authenticity of the fob. Ideally, the authenticity of the object should not be affected by copies. A copy of the art does not negatively affect the value of the original art. The opposite is true, the duplication of the art creates a type of 'currency' or current usage, that gives the original object value.
 
-## About Vericite Fobs
+## About Varicite Fobs
 
-A Vericite fob is meant to be a piece of art or jewelry.
+A Varicite fob is meant to be a piece of art or jewelry.
 The fob is a size that can be held in a human's hand.
 Non-Fungible Tokens are used to establish the fob's unique identity.
 
-Vericite creates fobs in series. A series shares a common design generated from a script. Within each series, there are variations that ensure that each design is unique.
+Varicite creates fobs in series. A series shares a common design generated from a script. Within each series, there are variations that ensure that each design is unique.
 
 The design of the fob is generated programmatically.
 The data and the script that is used to describe the design are saved and associated with the NFT. This data then can be used to duplicate the design.
