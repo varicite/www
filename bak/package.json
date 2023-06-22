@@ -2,18 +2,9 @@
   "name": "vericite-www",
   "version": "1.0.0",
   "description": "The main site of Vericite",
-  "author": "joseherminiocollas",
+  "main": "index.js",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "dependencies": {
-    "gatsby": "^5.11.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -23,6 +14,7 @@
     "crypto",
     "fobs"
   ],
+  "author": "Jose Collas",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/varicite/www/issues"
