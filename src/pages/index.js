@@ -1,6 +1,26 @@
 import * as React from "react"
 import '../style/style.css'
 
+const FobListing = ({ title, imageURl, definitionList }) => {
+  return (
+    <article class="listing">
+      <h3>{title}</h3>
+      <article>
+        <img src={imageURl} width="300" alt="listing image" />
+        <dl>
+          {definitionList.map(([term, definition]) => (
+            <>
+              <dt>{term}</dt>
+              <dd>{definition}</dd>
+            </>
+          ))}
+        </dl>
+        <button>Add To Cart</button>
+      </article>
+    </article>
+  );
+};
+
 const IndexPage = () => {
   return (
     <main >
@@ -15,23 +35,16 @@ const IndexPage = () => {
           <a href="fobs-ab">Fobs AB</a>
         </nav>
       </header>
-      <article class="listing">
-        <h3>Spiral Fob 1</h3>
-        <article>
-          <div class="fob-image">&nbsp; </div>
-          <dl>
-            <dt>Name</dt>
-            <dd>Spiral Fob 1</dd>
-            <dt>Material</dt>
-            <dd>Clear Acrylic</dd>
-            <dt>Shape</dt>
-            <dd>disk</dd>
-            <dt>Radius</dt>
-            <dd>30mm</dd>
-          </dl>
-          <button>Add To Cart</button>
-        </article>
-      </article>
+      <FobListing
+        title="Fob One"
+        imageURl="https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg"
+        definitionList={
+          [["Name", "Spiral Fob One"],
+          ["Material", "Clear Acrylic"],
+          ["Shape", "disk"],
+          ["Radius", "30mm"],]
+        }
+      />
     </main>
   )
 }
