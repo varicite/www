@@ -15,9 +15,14 @@ header span {
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "arial", sans-serif;
     margin: 1em;
+    background-color: #ccc;
+    max-width: 1200px;
 }
+
 .fob-image {
     width: 200px;
     height: 200px;
@@ -35,28 +40,39 @@ body {
     margin-bottom: 1em;
 }
 
-.index article.listing {
+article.listing {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
+    align-items: flex-start;
+    background-color: #eee;
+    max-width: 350px;
+    margin: 20px;
+    padding: 12px;
+    border-radius: 10%;
 }
 
-.index article.listing .image {
-    width: 300px;
-    height: 300px;
-    background-color: gray;
+article.listing img {
+    width: 150px;
+    height: 150px;
+    margin: 16px;
 }
-.index .listing article {
+
+article.listing button {
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+article.listing article {
     display: flex;
     justify-content: flex-start;
-align-items: self-end;
-    max-width: 500px;
-    max-height: 400px;
-    background-color: red;
+    align-items: flex-start;
 }
 
 dl {
     margin-bottom: 2em;
 }
+
 dt {
     font-size: 0.7em;
     color: #111;

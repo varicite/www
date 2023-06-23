@@ -6,7 +6,7 @@ const FobListing = ({ title, imageURl, definitionList }) => {
     <article class="listing">
       <h3>{title}</h3>
       <article>
-        <img src={imageURl} width="300" alt="listing image" />
+        <img src={imageURl} width="150" alt="listing image" />
         <dl>
           {definitionList.map(([term, definition]) => (
             <>
@@ -20,7 +20,44 @@ const FobListing = ({ title, imageURl, definitionList }) => {
     </article>
   );
 };
-
+const listings = [
+  {
+    title: "Fob One",
+    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
+    definitionList:
+      [["Name", "Spiral Fob One"],
+      ["Material", "Clear Acrylic"],
+      ["Shape", "disk"],
+      ["Radius", "40mm"],]
+  },
+  {
+    title: "Fob Two",
+    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
+    definitionList:
+      [["Name", "Spiral Fob Two"],
+      ["Material", "Clear Acrylic"],
+      ["Shape", "disk"],
+      ["Radius", "40mm"],]
+  },
+  {
+    title: "Fob Three",
+    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
+    definitionList:
+      [["Name", "Spiral Fob Three"],
+      ["Material", "Clear Acrylic"],
+      ["Shape", "disk"],
+      ["Radius", "40mm"],]
+  },
+  {
+    title: "Fob Four",
+    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
+    definitionList:
+      [["Name", "Spiral Fob Four"],
+      ["Material", "Clear Acrylic"],
+      ["Shape", "disk"],
+      ["Radius", "40mm"],]
+  },
+]
 const IndexPage = () => {
   return (
     <main >
@@ -35,20 +72,18 @@ const IndexPage = () => {
           <a href="fobs-ab">Fobs AB</a>
         </nav>
       </header>
-      <FobListing
-        title="Fob One"
-        imageURl="https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg"
-        definitionList={
-          [["Name", "Spiral Fob One"],
-          ["Material", "Clear Acrylic"],
-          ["Shape", "disk"],
-          ["Radius", "30mm"],]
-        }
-      />
+      <body>
+        {listings.map(l => {
+          return (<FobListing
+            title={l.title}
+            imageURl={l.imageURl}
+            definitionList={l.definitionList}
+          />)
+        })}
+      </body>
     </main>
   )
 }
 
 export default IndexPage
-
-export const Head = () => <title>Home Page</title>
+export const Head = () => <title>Varicite</title>
