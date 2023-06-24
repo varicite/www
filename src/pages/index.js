@@ -9,7 +9,39 @@ const getD = async (url) => {
 }
 const url = 'https://bafybeibuunoqpe65j3hu7ezjm3yqkn64y4tq7xdttc3lfcweg76bsjrixi.ipfs.w3s.link/fob-1.json';
 const tokenInformation = 'https://hashscan.io/testnet/token/0.0.14974334';
-
+// URL of JSON , token information
+const wireInfo = [
+  ['https://bafybeibuunoqpe65j3hu7ezjm3yqkn64y4tq7xdttc3lfcweg76bsjrixi.ipfs.w3s.link/fob-1.json',
+    'https://hashscan.io/testnet/token/0.0.14974334'
+  ],
+  ['https://bafybeihpi35eflottxk3owr2446bsj2j7lxul5nyfv5mndinvyophcmwxa.ipfs.w3s.link/fob-2.json',
+    'https://hashscan.io/testnet/token/0.0.14978344'
+  ],
+  ['https://bafybeiasq6cied7z4kqfgntz75tmwuxmetk36egskyiy55vrpuvgpjs4xu.ipfs.w3s.link/fob-3.json',
+    'https://hashscan.io/testnet/token/0.0.14978348'
+  ],
+  ['https://bafybeidxujycq7gewgnkq3yk5uthjl75dtf2tocyr5cbqzgi3dwe6dv64q.ipfs.w3s.link/fob-4.json',
+    'https://hashscan.io/testnet/token/0.0.14978350'
+  ],
+  ['https://bafybeicza3mx6muda2clg3dns2jvwytuykr2q27olguth4teja4gyvrlum.ipfs.w3s.link/fob-5.json',
+    'https://hashscan.io/testnet/token/0.0.14978351'
+  ],
+  ['https://bafybeic2djms4o5z6y7sw33byhlsdglyq3l4atff7llr543s3kjg6dqx7y.ipfs.w3s.link/fob-6.json',
+    'https://hashscan.io/testnet/token/0.0.14978352'
+  ],
+  ['https://bafybeifcj5nxbqyw4snr2nagx4syc4zm5tyohltrthmdl5ylif5abmsytm.ipfs.w3s.link/fob-7.json',
+    'https://hashscan.io/testnet/token/0.0.14978353'
+  ],
+  ['https://bafybeiaugopkaguenxbsua6iskzx6ndedtndhggtpliyaf7dqk5k2r4pqu.ipfs.w3s.link/fob-8.json',
+    'https://hashscan.io/testnet/token/0.0.14978354'
+  ],
+  ['https://bafybeigyhqply7eus65s4dvqhvfjoq3jmk7ntxzub6fw4vxadpnde4mvhu.ipfs.w3s.link/fob-9.json',
+    'https://hashscan.io/testnet/token/0.0.14978355'
+  ],
+  ['https://bafybeiefjgiushfledt3vooqxvygc6pexs2dtm7flsqqu3nfoqrsx6w3k4.ipfs.w3s.link/fob-10.json',
+    'https://hashscan.io/testnet/token/0.0.14978356'
+  ],
+]
 const FobListing = ({ title, imageURl, definitionList }) => {
 
   return (
@@ -125,24 +157,28 @@ const initData = {
   description: '',
   definitionList: [['', '']]
 }
+const jsonToDispaly = (jsonPacket) => {
+  const { properties, ...restJSONPacket } = jsonPacket;
+  const { shape, ...restProperties } = properties;
+  const lineFobData =
+  {
+    ...restJSONPacket,
+    definitionList: Object.entries({
+      ...restProperties,
+      tokenInformation: <a target="new" href={tokenInformation}>{tokenInformation}</a>
+    })
+  };
+  return lineFobData;
+}
 const IndexPage = () => {
   const [fob1Data, setFob1Data] = React.useState(initData)
 
   React.useEffect(() => {
     async function fetchData() {
-      const jsonPacket = await getD(url)
-      const { properties, ...restJSONPacket } = jsonPacket;
-      const { shape, ...restProperties } = properties;
-      const lineFobData =
-      {
-        ...restJSONPacket,
-        definitionList: Object.entries({
-          ...restProperties,
-          tokenInformation : <a target="new" href={tokenInformation}>{tokenInformation}</a>
-        })
+      getD(url)
+        .then(jsonPacket => setFob1Data(jsonToDispaly(jsonPacket)));
+
       };
-      setFob1Data(lineFobData)
-    };
     fetchData();
 
     return () => { }
@@ -151,7 +187,7 @@ const IndexPage = () => {
   return (
     <main >
       <header>
-        <h1>
+        <h1>xx
           <img src="https://ipfs.io/ipfs/bafkreie3coyvoqugh3xidoxhqj7wchtcxscrn6t4pcjhkzjsjohk7uzez4?filename=logo-a.svg"
             width="200" />
         </h1>
