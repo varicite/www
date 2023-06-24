@@ -46,7 +46,7 @@ article.listing {
     flex-direction: column;
     align-items: flex-start;
     background-color: #eee;
-    max-width: 350px;
+    max-width: 450px;
     margin: 20px;
     padding: 12px;
     border-radius: 10%;
