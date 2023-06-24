@@ -7,8 +7,6 @@ const getD = async (url) => {
 
   return jsonData;
 }
-const url = 'https://bafybeibuunoqpe65j3hu7ezjm3yqkn64y4tq7xdttc3lfcweg76bsjrixi.ipfs.w3s.link/fob-1.json';
-const tokenInformation = 'https://hashscan.io/testnet/token/0.0.14974334';
 // URL of JSON , token information
 const wireInfo = [
   ['https://bafybeibuunoqpe65j3hu7ezjm3yqkn64y4tq7xdttc3lfcweg76bsjrixi.ipfs.w3s.link/fob-1.json',
@@ -66,89 +64,6 @@ const FobListing = ({ title, imageURl, definitionList }) => {
     </article>
   );
 };
-const listings = [
-  {
-    title: "Fob Two",
-    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
-    definitionList:
-      [["Name", "Spiral Fob Two"],
-      ["Material", "Clear Acrylic"],
-      ["Shape", "disk"],
-      ["Radius", "40mm"],]
-  },
-  {
-    title: "Fob Three",
-    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
-    definitionList:
-      [["Name", "Spiral Fob Three"],
-      ["Material", "Clear Acrylic"],
-      ["Shape", "disk"],
-      ["Radius", "40mm"],]
-  },
-  {
-    title: "Fob Four",
-    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
-    definitionList:
-      [["Name", "Spiral Fob Four"],
-      ["Material", "Clear Acrylic"],
-      ["Shape", "disk"],
-      ["Radius", "40mm"],]
-  },
-  {
-    title: "Fob Five",
-    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
-    definitionList:
-      [["Name", "Spiral Fob Five"],
-      ["Material", "Clear Acrylic"],
-      ["Shape", "disk"],
-      ["Radius", "40mm"],]
-  },
-  {
-    title: "Fob Six",
-    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
-    definitionList:
-      [["Name", "Spiral Fob Six"],
-      ["Material", "Clear Acrylic"],
-      ["Shape", "disk"],
-      ["Radius", "40mm"],]
-  },
-  {
-    title: "Fob Seven",
-    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
-    definitionList:
-      [["Name", "Spiral Fob Seven"],
-      ["Material", "Clear Acrylic"],
-      ["Shape", "disk"],
-      ["Radius", "40mm"],]
-  },
-  {
-    title: "Fob Eight",
-    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
-    definitionList:
-      [["Name", "Spiral Fob Eight"],
-      ["Material", "Clear Acrylic"],
-      ["Shape", "disk"],
-      ["Radius", "40mm"],]
-  },
-  {
-    title: "Fob Nine",
-    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
-    definitionList:
-      [["Name", "Spiral Fob Nine"],
-      ["Material", "Clear Acrylic"],
-      ["Shape", "disk"],
-      ["Radius", "40mm"],]
-  },
-  {
-    title: "Fob Ten",
-    imageURl: "https://ipfs.io/ipfs/bafkreidtoycctoduzsvjewhw24gmqhdpmrkbi5soffzh6urj2peb25dymy?filename=fob-spiral-clear.jpg",
-    definitionList:
-      [["Name", "Spiral Fob Ten"],
-      ["Material", "Clear Acrylic"],
-      ["Shape", "disk"],
-      ["Radius", "40mm"],]
-  },
-]
 const initData = {
   name: '',
   creator: '',
@@ -157,7 +72,7 @@ const initData = {
   description: '',
   definitionList: [['', '']]
 }
-const jsonToDispaly = (jsonPacket) => {
+const jsonToDispaly = (jsonPacket, tokenInformation) => {
   const { properties, ...restJSONPacket } = jsonPacket;
   const { shape, ...restProperties } = properties;
   const lineFobData =
@@ -172,13 +87,39 @@ const jsonToDispaly = (jsonPacket) => {
 }
 const IndexPage = () => {
   const [fob1Data, setFob1Data] = React.useState(initData)
+  const [fob2, setFob2] = React.useState(initData)
+  const [fob3, setFob3] = React.useState(initData)
+  const [fob4, setFob4] = React.useState(initData)
+  const [fob5, setFob5] = React.useState(initData)
+  const [fob6, setFob6] = React.useState(initData)
+  const [fob7, setFob7] = React.useState(initData)
+  const [fob8, setFob8] = React.useState(initData)
+  const [fob9, setFob9] = React.useState(initData)
+  const [fob10, setFob10] = React.useState(initData)
 
   React.useEffect(() => {
     async function fetchData() {
-      getD(url)
-        .then(jsonPacket => setFob1Data(jsonToDispaly(jsonPacket)));
-
-      };
+      getD(wireInfo[0][0])
+        .then(jsonPacket => setFob1Data(jsonToDispaly(jsonPacket, wireInfo[0][1])));
+      getD(wireInfo[1][0])
+        .then(jsonPacket => setFob2(jsonToDispaly(jsonPacket, wireInfo[1][1])));
+      getD(wireInfo[2][0])
+        .then(jsonPacket => setFob3(jsonToDispaly(jsonPacket, wireInfo[2][1])));
+      getD(wireInfo[3][0])
+        .then(jsonPacket => setFob4(jsonToDispaly(jsonPacket, wireInfo[3][1])));
+      getD(wireInfo[4][0])
+        .then(jsonPacket => setFob5(jsonToDispaly(jsonPacket, wireInfo[4][1])));
+      getD(wireInfo[5][0])
+        .then(jsonPacket => setFob6(jsonToDispaly(jsonPacket, wireInfo[5][1])));
+      getD(wireInfo[6][0])
+        .then(jsonPacket => setFob7(jsonToDispaly(jsonPacket, wireInfo[6][1])));
+      getD(wireInfo[7][0])
+        .then(jsonPacket => setFob8(jsonToDispaly(jsonPacket, wireInfo[7][1])));
+      getD(wireInfo[8][0])
+        .then(jsonPacket => setFob9(jsonToDispaly(jsonPacket, wireInfo[8][1])));
+      getD(wireInfo[9][0])
+        .then(jsonPacket => setFob10(jsonToDispaly(jsonPacket, wireInfo[9][1])));
+    };
     fetchData();
 
     return () => { }
@@ -187,7 +128,7 @@ const IndexPage = () => {
   return (
     <main >
       <header>
-        <h1>xx
+        <h1>
           <img src="https://ipfs.io/ipfs/bafkreie3coyvoqugh3xidoxhqj7wchtcxscrn6t4pcjhkzjsjohk7uzez4?filename=logo-a.svg"
             width="200" />
         </h1>
@@ -210,13 +151,51 @@ const IndexPage = () => {
           imageURl={fob1Data.image}
           definitionList={fob1Data.definitionList}
         />
-        {listings.map(l => {
-          return (<FobListing
-            title={l.title}
-            imageURl={l.imageURl}
-            definitionList={l.definitionList}
-          />)
-        })}
+        <FobListing
+          title={fob2.name}
+          imageURl={fob2.image}
+          definitionList={fob2.definitionList}
+        />
+        <FobListing
+          title={fob3.name}
+          imageURl={fob3.image}
+          definitionList={fob3.definitionList}
+        />
+        <FobListing
+          title={fob4.name}
+          imageURl={fob4.image}
+          definitionList={fob4.definitionList}
+        />
+        <FobListing
+          title={fob5.name}
+          imageURl={fob5.image}
+          definitionList={fob5.definitionList}
+        />
+        <FobListing
+          title={fob6.name}
+          imageURl={fob6.image}
+          definitionList={fob6.definitionList}
+        />
+        <FobListing
+          title={fob7.name}
+          imageURl={fob7.image}
+          definitionList={fob7.definitionList}
+        />
+        <FobListing
+          title={fob8.name}
+          imageURl={fob8.image}
+          definitionList={fob8.definitionList}
+        />
+        <FobListing
+          title={fob9.name}
+          imageURl={fob9.image}
+          definitionList={fob9.definitionList}
+        />
+        <FobListing
+          title={fob10.name}
+          imageURl={fob10.image}
+          definitionList={fob10.definitionList}
+        />
       </body>
     </main>
   )
