@@ -4,11 +4,11 @@ import '../style/style.css'
 const getD = async (url) => {
   const fetchResponse = await fetch(url);
   const jsonData = await fetchResponse.json();
-  const { shape, image, properties, ...rest } = { ...jsonData, ...jsonData.properties };
 
   return jsonData;
 }
 const url = 'https://bafybeibuunoqpe65j3hu7ezjm3yqkn64y4tq7xdttc3lfcweg76bsjrixi.ipfs.w3s.link/fob-1.json';
+const tokenInformation = 'https://hashscan.io/testnet/token/0.0.14974334';
 
 const FobListing = ({ title, imageURl, definitionList }) => {
 
@@ -133,7 +133,14 @@ const IndexPage = () => {
       const jsonPacket = await getD(url)
       const { properties, ...restJSONPacket } = jsonPacket;
       const { shape, ...restProperties } = properties;
-      const lineFobData = { ...restJSONPacket, definitionList: Object.entries(restProperties) };
+      const lineFobData =
+      {
+        ...restJSONPacket,
+        definitionList: Object.entries({
+          ...restProperties,
+          tokenInformation : <a target="new" href={tokenInformation}>{tokenInformation}</a>
+        })
+      };
       setFob1Data(lineFobData)
     };
     fetchData();
@@ -155,6 +162,12 @@ const IndexPage = () => {
         </nav>
       </header>
       <h1>The Spiral Series</h1>
+      <p>Contract Information <a
+        target="new"
+        href="https://hashscan.io/testnet/contract/0.0.14971695" >
+        https://hashscan.io/testnet/contract/0.0.14971695
+      </a>
+      </p>
       <body>
         <FobListing
           title={fob1Data.name}
