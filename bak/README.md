@@ -1,5 +1,5 @@
 # Varicite
-This is the repository for the main website of Varicite, hosted at 
+This is the repository for the main website of varicite, hosted at 
 [http://varicite-cleveland-lima.com](http://varicite-cleveland-lima.com)
 
 
@@ -64,31 +64,5 @@ A series of ten fobs will be created. The design will be of the theme, spirals. 
 ### The Spiral
 
 A spiral is drawn with dots. These dots vary in size. They can grow from small to large or from small to large or be random in size. 
-
-
-## Technical Stack
-
-### Front End
-
-Gatsby, JavaScript, React, CSS, HTML, 
-
-A standard strategy toward the front end is ideal. The following technologies are standard solutions to achieve a basic shopping site like the Varicite site.
-
-### Backend Blockchain
-Solidity, Hedera
-Linux, Git code repo, hosting
-
-A Solidity contract is used for the actions of minting and transferring the NFT Fobs.
-The Hedera network is used to record blockchain records. 
-
-Currently, 10 NFT fobs are established in a test network.
-
-In the website listing of the fob, there are displayed links to the Hedera network. 
-
-In the listing, there are also links to Git repositories that hold the code that can be used to reproduce the design.
-
-### Creation of Physical Object
-
-The Fob is a piece of acrylic plastic into which the design has been engraved. The engraving is done with the SVG file that is generated from the script and laser cutters.
 
 June 2023
