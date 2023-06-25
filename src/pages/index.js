@@ -41,7 +41,9 @@ const wireInfo = [
   ],
 ]
 const FobListing = ({ title, imageURl, definitionList }) => {
-
+  const follow = (local) => {
+    window.location.href = '/cart?id=3'
+  }
   return (
     <article class="listing">
       <h3>{title}</h3>
@@ -59,7 +61,7 @@ const FobListing = ({ title, imageURl, definitionList }) => {
             );
           })}
         </dl>
-        <button>Add To Cart</button>
+        <button onClick={follow}>Add To Cart</button>
       </article>
     </article>
   );

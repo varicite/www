@@ -1,0 +1,15 @@
+html body.cart {
+    display: inline;
+    font-family: "arial", sans-serif;
+    margin: 1em;
+    background-color: #ccc;
+    max-width: 1200px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 200px;
+    background-color: #eee;
+}
