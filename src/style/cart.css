@@ -12,4 +12,8 @@ form {
     justify-content: space-around;
     min-height: 200px;
     background-color: #eee;
+    max-width: 30em;
+}
+form button {
+    max-width: 13em;
 }
